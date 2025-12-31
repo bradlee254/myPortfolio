@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import{ useRoute } from 'vue-router'
+import { useRoute } from 'vue-router'
 
 const route = useRoute
 const isVisible = ref(false);
@@ -26,7 +26,7 @@ const handleMouseMove = (e: MouseEvent) => {
   <section
     class="relative min-h-screen flex items-center overflow-hidden
            px-6 md:px-12 lg:px-24
-           pt-28 md:pt-32"
+           pt-28 md:pt-0"
     @mousemove="handleMouseMove"
   >
     <!-- Background motion -->
@@ -59,7 +59,8 @@ const handleMouseMove = (e: MouseEvent) => {
 
     <!-- Content -->
     <div class="relative z-10 w-full max-w-7xl mx-auto">
-      <div class="grid lg:grid-cols-2 gap-14 items-center">
+      <!-- Changed grid to single column -->
+      <div class="grid grid-cols-1 gap-14 items-center">
 
         <!-- Left -->
         <div>
@@ -113,14 +114,14 @@ const handleMouseMove = (e: MouseEvent) => {
             class="flex flex-wrap gap-4 transition-all duration-700 delay-400"
             :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
           >
-          <RouterLink
+            <RouterLink
               to="/projects"
               class="px-8 py-4 rounded-xl bg-emerald-400 text-zinc-900 font-semibold transition hover:scale-105 hover:shadow-lg hover:shadow-emerald-400/20"
             >
               View My Work
             </RouterLink>
 
-             <RouterLink
+            <RouterLink
               to="/contact"
               class="px-8 py-4 rounded-xl border border-zinc-800 text-white font-semibold transition hover:border-emerald-400 hover:text-emerald-400 hover:scale-105"
             >
@@ -129,7 +130,8 @@ const handleMouseMove = (e: MouseEvent) => {
           </div>
         </div>
 
-        <!-- Right -->
+        <!-- Right  -->
+        <!--
         <div
           class="relative transition-all duration-700 delay-500"
           :class="isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'"
@@ -173,6 +175,7 @@ const handleMouseMove = (e: MouseEvent) => {
             <p class="text-sm text-zinc-500">Experience</p>
           </div>
         </div>
+        -->
 
       </div>
     </div>

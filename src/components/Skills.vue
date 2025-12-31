@@ -51,7 +51,7 @@ const filteredSkills = computed(() => activeCategory.value === "All" ? skills : 
     id="skills"
     class="relative overflow-hidden
            px-6 md:px-12 lg:px-24
-           py-28 md:py-32"
+           py-28 md:py-0"
   >
     <!-- Background accent -->
     <div

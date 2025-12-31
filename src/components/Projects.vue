@@ -56,7 +56,7 @@ onBeforeUnmount(() => observer?.disconnect());
   <section
     ref="sectionRef"
     id="projects"
-    class="relative overflow-hidden px-6 md:px-12 lg:px-24 py-28 md:py-32"
+    class="relative overflow-hidden px-6 md:px-12 lg:px-24 py-28 md:py-0 "
   >
     <!-- Background Accent -->
     <div class="absolute top-1/4 left-0 w-96 h-96 rounded-full border border-zinc-800/50 -translate-x-1/2" />
