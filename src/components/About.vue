@@ -27,8 +27,8 @@ onBeforeUnmount(() => {
 
 const stats = [
   { value: "2+", label: "Years Experience", icon: "◷" },
-  { value: "5+", label: "Projects Completed", icon: "◪" },
-  { value: "Frontend", label: "Vue • TS • Tailwind", icon: "◈" },
+  { value: "3+", label: "Projects Completed", icon: "◪" },
+  { value: "Frontend", label: "React • Vue • TS • Tailwind", icon: "◈" },
   { value: "Backend", label: "Node • MongoDB", icon: "◉" },
 ];
 </script>
@@ -41,7 +41,7 @@ const stats = [
            px-6 md:px-12 lg:px-24
            py-28 md:py-0"
   >
-    <!-- Background accent -->
+    <!-- Bgcolor -->
     <div
       class="absolute top-0 right-0 w-96 h-96 rounded-full
              border border-zinc-800/50
@@ -92,7 +92,7 @@ const stats = [
           >
             I specialize in frontend development using
             <span class="text-white font-medium">
-              Vue, TypeScript, and Tailwind CSS
+             React, Vue, TypeScript, Tailwind CSS and other frontend frameworks
             </span>,
             and I also build backend APIs with
             <span class="text-white font-medium">
@@ -113,7 +113,7 @@ const stats = [
             class="pt-6 transition-all duration-700 delay-500"
             :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
           >
-            <button
+            <!-- <button
               class="group flex items-center gap-3
                      text-emerald-400 font-semibold
                      transition-all duration-300 hover:gap-4"
@@ -133,7 +133,7 @@ const stats = [
                   d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
                 />
               </svg>
-            </button>
+            </button> -->
           </div>
         </div>
 
