@@ -21,7 +21,7 @@ const projects: Project[] = [
     description:
       "A full-stack platform for ordering and managing fuel deliveries with role-based access control, real-time tracking, and payment integration.",
     tech: ["Vue", "TypeScript", "Node.js", "MongoDB"],
-    github: "https://github.com/yourusername/fuel-delivery",
+    github: "https://github.com/bradlee254/oil-delivery",
     demo: "",
     icon: "◪",
   },
@@ -29,10 +29,18 @@ const projects: Project[] = [
     title: "Mental Health Journal App",
     description:
       "A journaling app that allows users to track moods, activities, and receive AI-powered insights for better mental wellness.",
-    tech: ["Vue", "TypeScript", "Tailwind", "AI"],
-    github: "https://github.com/yourusername/journal-app",
+    tech: ["React", "TypeScript", "Tailwind", "AI"],
+    github: "https://github.com/bradlee254/frontend",
     icon: "◉",
   },
+  // {
+  //   title:" Expressshop Ecommerce App",
+  //   description:
+  //     "An e-commerce app that allows users to shop online and checkout with real-time payment integration.",
+  //   tech: ["svele", "TypeScript", "Tailwind",],  
+  //   github: "https://github.com/yourusername/expressshop",
+  //   icon: "◈",
+  // }
 ];
 
 onMounted(() => {
@@ -178,13 +186,13 @@ onBeforeUnmount(() => observer?.disconnect());
         </article>
       </div>
 
-      <!-- View More CTA -->
+      <!-- View -->
       <div
         class="mt-16 text-center transition-all duration-700 delay-700"
         :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
       >
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/bradlee254"
           target="_blank"
           class="group inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-zinc-800 text-white rounded-xl font-semibold hover:border-emerald-400 hover:text-emerald-400 transition-all duration-300 hover:scale-105"
         >

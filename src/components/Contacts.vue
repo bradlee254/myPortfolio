@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted, onBeforeUnmount } from "vue";
+import emailjs from "@emailjs/browser";
 
 const isVisible = ref(false);
 const sectionRef = ref<HTMLElement | null>(null);
@@ -18,22 +19,38 @@ const contactInfo = [
   { icon: "◈", label: "GitHub", value: "View Profile", link: "https://github.com/bradlee254" },
 ];
 
+// 🔹 EmailJS submit
 const handleSubmit = async () => {
   isSubmitting.value = true;
-  await new Promise((resolve) => setTimeout(resolve, 1500));
-  console.log("Form submitted:", form);
-  alert("Message sent! (connect EmailJS or Formspree next)");
-  form.name = "";
-  form.email = "";
-  form.message = "";
-  isSubmitting.value = false;
+
+  try {
+    await emailjs.send(
+      "service_w1xn9ar",
+      "template_m7ti8pg",
+      {
+        from_name: form.name,
+        from_email: form.email,
+        message: form.message,
+      },
+      "ZhNPdVIAFBzYHXV4Q"
+    );
+
+    alert("Message sent successfully!");
+    form.name = "";
+    form.email = "";
+    form.message = "";
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+    alert("Failed to send message. Please try again.");
+  } finally {
+    isSubmitting.value = false;
+  }
 };
 
 onMounted(() => {
   observer = new IntersectionObserver(
-    (entries: IntersectionObserverEntry[]) => {
-      const entry = entries[0];
-      if (entry && entry.isIntersecting) {
+    (entries) => {
+      if (entries[0]?.isIntersecting) {
         isVisible.value = true;
         observer?.disconnect();
       }
@@ -46,6 +63,8 @@ onMounted(() => {
 
 onBeforeUnmount(() => observer?.disconnect());
 </script>
+
+
 
 <template>
   <section
