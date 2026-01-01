@@ -40,7 +40,7 @@ const toggleMobileMenu = () => {
         <div class="flex items-center gap-2">
           <div class="w-2 h-2 bg-emerald-400 rounded-full"></div>
           <h1 class="text-3xl font-bold text-white tracking-tight">
-            Bashir
+            Bradley
           </h1>
         </div>
         <div class="h-0.5 w-0 group-hover:w-16 bg-emerald-400 transition-all duration-300 mt-2"></div>
@@ -87,7 +87,7 @@ const toggleMobileMenu = () => {
     </div>
   </header>
 
-  <!-- Mobile Header - Minimal Top Bar -->
+  <!-- Mobile Header-->
   <header
     class="fixed top-0 left-0 w-full z-50 md:hidden"
   >
@@ -95,7 +95,7 @@ const toggleMobileMenu = () => {
       <nav class="px-6 h-16 flex items-center justify-between">
         <RouterLink to="/" class="flex items-center gap-2">
           <div class="w-2 h-2 bg-emerald-400 rounded-full"></div>
-          <span class="text-xl font-bold text-white">Bashir</span>
+          <span class="text-xl font-bold text-white">Bradley</span>
         </RouterLink>
 
         <button
@@ -157,7 +157,7 @@ const toggleMobileMenu = () => {
             @click="mobileMenuOpen = false"
           >
             <div class="w-2 h-2 bg-emerald-400 rounded-full"></div>
-            <span class="text-2xl font-bold text-white">Bashir</span>
+            <span class="text-2xl font-bold text-white">Bradley</span>
           </RouterLink>
           <button
             @click="mobileMenuOpen = false"

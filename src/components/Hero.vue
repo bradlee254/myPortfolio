@@ -29,7 +29,7 @@ const handleMouseMove = (e: MouseEvent) => {
            pt-28 md:pt-0"
     @mousemove="handleMouseMove"
   >
-    <!-- Background motion -->
+    <!-- Background -->
     <div class="absolute inset-0 pointer-events-none">
       <div
         class="absolute w-96 h-96 border border-emerald-400/10 rounded-full transition-transform duration-300"
@@ -59,7 +59,7 @@ const handleMouseMove = (e: MouseEvent) => {
 
     <!-- Content -->
     <div class="relative z-10 w-full max-w-7xl mx-auto">
-      <!-- Changed grid to single column -->
+    
       <div class="grid grid-cols-1 gap-14 items-center">
 
         <!-- Left -->
@@ -83,7 +83,7 @@ const handleMouseMove = (e: MouseEvent) => {
           >
             Hey, I’m
             <span class="relative inline-block ml-2">
-              <span class="relative z-10 text-emerald-400">Bashir</span>
+              <span class="relative z-10 text-emerald-400">Bradley</span>
               <span
                 class="absolute -bottom-2 left-0 w-full h-3
                        bg-emerald-400/20 -rotate-1"
@@ -96,7 +96,7 @@ const handleMouseMove = (e: MouseEvent) => {
                    transition-all duration-700 delay-200"
             :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
           >
-            Full-stack developer crafting
+            Software developer crafting
             <span class="text-white font-medium"> digital experiences</span>
           </p>
 
