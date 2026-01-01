@@ -12,15 +12,17 @@ const isVisible = ref(false);
 const sectionRef = ref<HTMLElement | null>(null);
 let observer: IntersectionObserver | null = null;
 
+
 onMounted(() => {
   observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        isVisible.value = true;
-        observer?.disconnect();
-      }
-    },
-    { threshold: 0.25 }
+      (entries: IntersectionObserverEntry[]) => {
+        const entry = entries[0];
+        if (entry && entry.isIntersecting) {
+          isVisible.value = true;
+          observer?.disconnect();
+        }
+      },
+      { threshold: 0.25 }
   );
 
   if (sectionRef.value) {
@@ -38,7 +40,9 @@ const skills: Skill[] = [
   { name: "Vue.js", category: "Frontend", description: "Building reactive user interfaces with Vue.js.", icon: "◈" },
   { name: "Node.js", category: "Backend", description: "Building server-side applications with Node.js.", icon: "◉" },
   { name: "Tailwind CSS", category: "Frontend", description: "Crafting beautiful UIs with utility-first CSS.", icon: "◪" },
-  { name: "Nuxt.js", category: "Frontend", description: "Building full-stack applications with Nuxt.js.", icon: "◆" },
+  { name: "React.js", category: "Frontend", description: "Building user interfaces with React.js.", icon: "◯" },
+  { name: "MongoDB", category: "Backend", description: "Building database systems with MongoDB.", icon: "◷" },
+  { name: "Svelte.js", category: "Frontend", description: "Building user interfaces with Svelte.js.", icon: "◊" },
 ];
 
 const categories = computed(() => ["All", ...new Set(skills.map((s) => s.category))]);
@@ -124,12 +128,10 @@ const filteredSkills = computed(() => activeCategory.value === "All" ? skills : 
         >
           <div class="absolute inset-0 rounded-2xl bg-emerald-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-          <!-- Icon -->
           <div class="relative text-5xl text-emerald-400/20 mb-6 group-hover:text-emerald-400/40 group-hover:scale-110 transition-all duration-300">
             {{ skill.icon }}
           </div>
 
-          <!-- Category Badge -->
           <div class="inline-flex items-center gap-2 px-3 py-1 mb-4
                       rounded-full bg-emerald-400/10 border border-emerald-400/20">
             <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
@@ -138,20 +140,15 @@ const filteredSkills = computed(() => activeCategory.value === "All" ? skills : 
             </span>
           </div>
 
-          <!-- Skill Name -->
           <h3 class="text-2xl font-bold mb-3 group-hover:text-emerald-400 transition-colors duration-300">
             {{ skill.name }}
           </h3>
 
-          <!-- Description -->
           <p class="text-zinc-500 leading-relaxed">{{ skill.description }}</p>
-
-          <!-- Corner Accent -->
           <div class="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-zinc-800 rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
       </div>
 
-      <!-- Bottom Stats -->
       <div
         class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 transition-all duration-700 delay-700"
         :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"

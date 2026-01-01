@@ -6,9 +6,10 @@ const sectionRef = ref<HTMLElement | null>(null);
 let observer: IntersectionObserver | null = null;
 
 onMounted(() => {
-  observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
+ observer = new IntersectionObserver(
+    (entries: IntersectionObserverEntry[]) => {
+      const entry = entries[0];
+      if (entry && entry.isIntersecting) {
         isVisible.value = true;
         observer?.disconnect();
       }
