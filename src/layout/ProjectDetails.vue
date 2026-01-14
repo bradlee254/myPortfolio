@@ -9,16 +9,16 @@
       </RouterLink>
 
       <h1 class="text-4xl font-bold mt-6 mb-4">
-        {{ project.title }}
+        {{ project?.title }}
       </h1>
 
       <p class="text-zinc-400 mb-6">
-        {{ project.description }}
+        {{ project?.description }}
       </p>
 
       <div class="flex gap-2 mb-8">
         <span
-          v-for="tech in project.tech"
+          v-for="tech in project?.tech"
           :key="tech"
           class="px-3 py-1 text-xs rounded-full bg-zinc-800"
         >
